@@ -6,18 +6,47 @@ const area = document.getElementById("area");
 const success = document.getElementById("success");
 
 /* 🤖 NO BUTTON AI */
-noBtn.addEventListener("mouseover", () => {
+const noBtn = document.getElementById("noBtn");
+const area = document.getElementById("area");
+
+let fearLevel = 1;
+
+function moveNoButton(){
 
     const rect = area.getBoundingClientRect();
 
-    const maxX = rect.width - noBtn.offsetWidth;
-    const maxY = rect.height - noBtn.offsetHeight;
+    const btnWidth = noBtn.offsetWidth;
+    const btnHeight = noBtn.offsetHeight;
 
-    const x = Math.random() * maxX;
-    const y = Math.random() * maxY;
+    const maxX = rect.width - btnWidth;
+    const maxY = rect.height - btnHeight;
 
-    noBtn.style.left = x + "px";
-    noBtn.style.top = y + "px";
+    fearLevel += 0.1;
+
+    let x = Math.random() * maxX;
+    let y = Math.random() * maxY;
+
+    // keep inside bounds
+    x = Math.max(0, Math.min(x, maxX));
+    y = Math.max(0, Math.min(y, maxY));
+
+    noBtn.style.left = `${x}px`;
+    noBtn.style.top = `${y}px`;
+
+    // mobile vibration
+    if(navigator.vibrate){
+        navigator.vibrate(15);
+    }
+}
+
+/* desktop */
+noBtn.addEventListener("mouseenter", moveNoButton);
+
+/* mobile */
+noBtn.addEventListener("touchstart", (e)=>{
+    e.preventDefault();
+    moveNoButton();
+});
 
     if (navigator.vibrate) {
         navigator.vibrate(20);
