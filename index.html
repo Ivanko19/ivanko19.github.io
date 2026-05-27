@@ -4,9 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Официална покана 👀 ✨</title>
+<title>☠ cursed date invitation</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -18,234 +17,190 @@
     font-family:'Poppins',sans-serif;
 }
 
-/* ===== EMO DARK BACKGROUND ===== */
 body{
     height:100vh;
     overflow:hidden;
-    background:
-    radial-gradient(circle at top left, rgba(122,92,255,0.22), transparent 30%),
-    radial-gradient(circle at bottom right, rgba(255,76,145,0.18), transparent 35%),
-    radial-gradient(circle at center, rgba(70,90,255,0.12), transparent 40%),
-    linear-gradient(135deg,#0f0f17,#151521,#1d1b2e);
     display:flex;
     justify-content:center;
     align-items:center;
-    color:#e8e8ee;
+    background:
+    radial-gradient(circle at top, rgba(255,0,0,0.08), transparent 40%),
+    radial-gradient(circle at bottom, rgba(0,0,0,0.95), transparent 60%),
+    linear-gradient(135deg,#050005,#0a0a10,#000);
+    color:#eaeaea;
     position:relative;
 }
 
-/* subtle moving noise */
+/* GRUNGY NOISE LAYER */
 body::before{
     content:"";
     position:absolute;
     width:200%;
     height:200%;
     background:
-    radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
-    background-size:40px 40px;
-    animation:moveBg 30s linear infinite;
-    opacity:0.25;
+    repeating-linear-gradient(
+        0deg,
+        rgba(255,255,255,0.03),
+        rgba(255,255,255,0.03) 1px,
+        transparent 1px,
+        transparent 4px
+    );
+    animation:noise 6s linear infinite;
+    opacity:0.15;
 }
 
-@keyframes moveBg{
-    from{ transform:translate(0,0); }
-    to{ transform:translate(-120px,-80px); }
+@keyframes noise{
+    from{ transform:translateY(0); }
+    to{ transform:translateY(-60px); }
 }
 
-/* ===== 3D EMO CREATURES ===== */
+/* grime flicker */
+@keyframes flicker {
+    0%,100% { opacity:1; }
+    50% { opacity:0.6; }
+    52% { opacity:0.9; }
+    54% { opacity:0.4; }
+}
 
+/* creatures */
 .creature{
     position:absolute;
-    font-size:80px;
-    opacity:0.25;
-    filter:drop-shadow(0 0 25px rgba(255,255,255,0.08));
-    animation:floatCreature 8s ease-in-out infinite;
-    user-select:none;
-    pointer-events:none;
-    z-index:1;
+    font-size:90px;
+    opacity:0.12;
+    animation:float 8s ease-in-out infinite;
 }
 
-.raven{
-    left:6%;
-    top:18%;
-    transform:rotate(-12deg);
-}
-
-.owl{
-    right:6%;
-    bottom:15%;
-    transform:rotate(10deg);
-    animation-delay:2s;
-}
-
-@keyframes floatCreature{
-    0%{
-        transform:translateY(0px) scale(1) rotate(0deg);
-    }
-    50%{
-        transform:translateY(-18px) scale(1.08) rotate(5deg);
-    }
-    100%{
-        transform:translateY(0px) scale(1) rotate(0deg);
-    }
-}
-
-/* ===== HEARTS ===== */
-.heart{
-    position:absolute;
-    color:#ff7eb6;
-    opacity:0.08;
-    animation:float 12s linear infinite;
-    user-select:none;
-    text-shadow:0 0 15px rgba(255,126,182,0.4);
-}
+.raven{ left:5%; top:15%; }
+.owl{ right:5%; bottom:10%; animation-delay:2s; }
 
 @keyframes float{
-    from{ transform:translateY(100vh) rotate(0deg); }
-    to{ transform:translateY(-120px) rotate(360deg); }
+    0%{ transform:translateY(0); }
+    50%{ transform:translateY(-20px); }
+    100%{ transform:translateY(0); }
 }
 
-/* ===== CARD ===== */
+/* CARD */
 .card{
     width:90%;
     max-width:560px;
-    background:rgba(20,20,30,0.58);
-    backdrop-filter:blur(18px);
-    border:1px solid rgba(255,255,255,0.08);
-    border-radius:32px;
+    background:rgba(10,0,10,0.78);
+    border:1px solid rgba(255,0,0,0.15);
+    border-radius:24px;
     padding:40px;
     text-align:center;
-    box-shadow:
-    0 15px 50px rgba(0,0,0,0.45),
-    0 0 40px rgba(140,100,255,0.08);
-    position:relative;
+    box-shadow:0 0 80px rgba(255,0,0,0.08);
     z-index:10;
-    animation:fadeIn 1s ease;
-}
-
-@keyframes fadeIn{
-    from{ opacity:0; transform:translateY(20px); }
-    to{ opacity:1; transform:translateY(0); }
 }
 
 .badge{
     display:inline-block;
-    background:rgba(255,255,255,0.08);
-    color:#ff9dc2;
-    padding:8px 18px;
+    padding:6px 14px;
     border-radius:999px;
-    font-size:0.9rem;
-    font-weight:600;
-    margin-bottom:20px;
-    border:1px solid rgba(255,255,255,0.06);
+    background:rgba(255,0,0,0.08);
+    border:1px solid rgba(255,0,0,0.2);
+    color:#ff4d6d;
+    font-size:0.8rem;
+    margin-bottom:18px;
 }
 
 h1{
-    font-size:2.8rem;
-    margin-bottom:15px;
-    color:#ff8fb7;
-    text-shadow:0 0 18px rgba(255,143,183,0.2);
+    font-size:2.5rem;
+    color:#ff2e4d;
+    margin-bottom:10px;
+    animation:flicker 3s infinite;
 }
 
 .subtitle{
-    font-size:1.08rem;
-    line-height:1.8;
-    color:#d4d4de;
-    margin-bottom:30px;
+    margin-bottom:25px;
+    color:#cfcfcf;
 }
 
+/* grunge box */
 .meme-box{
-    background:rgba(255,255,255,0.05);
-    border:1px solid rgba(255,255,255,0.05);
-    border-radius:20px;
-    padding:18px;
-    margin-bottom:25px;
-    font-size:0.95rem;
-    line-height:1.7;
-    color:#cfcfe6;
+    background:rgba(255,255,255,0.03);
+    border:1px dashed rgba(255,0,0,0.25);
+    padding:16px;
+    border-radius:14px;
+    margin-bottom:20px;
+    color:#bdbdbd;
 }
 
 /* inputs */
-.calendar{
-    text-align:left;
-    margin-bottom:20px;
-}
-
-label{
-    display:block;
-    margin-bottom:8px;
-    font-weight:600;
-    color:#f0f0f5;
-}
-
 input{
     width:100%;
     padding:14px;
+    margin-bottom:12px;
     border:none;
-    border-radius:16px;
-    margin-bottom:18px;
-    background:rgba(255,255,255,0.08);
+    border-radius:12px;
+    background:rgba(255,255,255,0.05);
     color:white;
-    border:1px solid rgba(255,255,255,0.06);
 }
 
 /* buttons */
 .buttons{
+    position:relative;
     display:flex;
     justify-content:center;
-    gap:18px;
-    position:relative;
-    margin-top:10px;
+    gap:20px;
 }
 
 button{
+    padding:14px 26px;
     border:none;
     border-radius:999px;
-    padding:14px 28px;
-    font-size:1rem;
     font-weight:700;
     cursor:pointer;
-    transition:0.25s;
 }
 
 .yes{
-    background:linear-gradient(135deg,#ff5ca8,#9b6dff);
+    background:linear-gradient(135deg,#ff0033,#6a00ff);
     color:white;
 }
 
-.yes:hover{
-    transform:translateY(-3px) scale(1.04);
-}
-
 .no{
-    background:rgba(255,255,255,0.08);
-    color:#ff9dc2;
+    background:rgba(255,255,255,0.05);
+    color:#ff6b6b;
     position:absolute;
     right:0;
 }
 
-/* result */
+/* RESULT */
 .result{
-    margin-top:28px;
+    margin-top:20px;
     display:none;
-    background:rgba(255,255,255,0.05);
-    border-radius:22px;
-    padding:20px;
-    line-height:1.9;
-    color:#ececf6;
+    background:rgba(0,0,0,0.5);
+    border:1px solid rgba(255,0,0,0.2);
+    padding:18px;
+    border-radius:14px;
 }
 
-/* footer */
-.small{
-    margin-top:25px;
-    font-size:0.82rem;
-    color:#8f8fa8;
+/* 🔥 JUMPSCARE OVERLAY */
+.jumpscare{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    background:black;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:999;
 }
 
-/* mobile */
-@media(max-width:600px){
-    .card{ padding:28px; }
-    h1{ font-size:2rem; }
+.jumpscare img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    animation:shake 0.2s infinite;
+}
+
+@keyframes shake{
+    0%{ transform:translate(0,0); }
+    25%{ transform:translate(8px,-8px); }
+    50%{ transform:translate(-8px,8px); }
+    75%{ transform:translate(8px,8px); }
+    100%{ transform:translate(0,0); }
 }
 
 </style>
@@ -253,48 +208,40 @@ button{
 
 <body>
 
-<!-- EMO CREATURES -->
 <div class="creature raven">🪶</div>
 <div class="creature owl">🦉</div>
 
 <div class="card">
 
-    <div class="badge">verified cute invitation ✔</div>
+    <div class="badge">☠ system unstable</div>
 
-    <h1>date request 💌</h1>
+    <h1>date request.exe</h1>
 
     <div class="subtitle">
-        След дълги преговори с болния ми мозък,<br>
-        мисля, че трябва да те поканя на среща 😌
+        не натискай “no”… сериозно.
     </div>
 
     <div class="meme-box">
-        📊 cringe risk: 67%<br>
-        ☕ caffeine overdose: 99%<br>
-        ❤️ nervous energy: extremely high
+        status: corrupted emotions<br>
+        ghosts: active<br>
+        caffeine: illegal
     </div>
 
-    <div class="calendar">
-
-        <label>📅 Избери дата</label>
-        <input type="date" id="date">
-
-        <label>⏰ Избери час</label>
-        <input type="time" id="time">
-
-    </div>
+    <input type="date" id="date">
+    <input type="time" id="time">
 
     <div class="buttons">
-
-        <button class="yes" id="yesBtn">yes 😎</button>
-        <button class="no" id="noBtn">no 😭</button>
-
+        <button class="yes" id="yesBtn">yes 👍</button>
+        <button class="no" id="noBtn">no 💀</button>
     </div>
 
     <div class="result" id="result"></div>
 
-    <div class="small">powered by anxiety & ravens 🖤</div>
+</div>
 
+<!-- JUMPSCARE LAYER -->
+<div class="jumpscare" id="jumpscare">
+    <img src="https://i.imgur.com/oCkEbrA.jpg" alt="scare">
 </div>
 
 <script>
@@ -302,62 +249,60 @@ button{
 const noBtn = document.getElementById('noBtn');
 const yesBtn = document.getElementById('yesBtn');
 const result = document.getElementById('result');
+const scare = document.getElementById('jumpscare');
 
-const jokes = [
-    "no is temporarily unavailable",
-    "error 404 rejection not found",
-    "nice try 😂",
-    "system says YES",
-    "blocked 🚨"
+const cursedTexts = [
+    "NO? interesting choice...",
+    "you shouldn't have done that",
+    "system is angry",
+    "why would you do this",
+    "ERROR: bad decision"
 ];
 
+/* runaway NO button */
 noBtn.addEventListener('mouseover', () => {
 
-    const x = Math.random() * (window.innerWidth - 180);
-    const y = Math.random() * (window.innerHeight - 120);
+    const x = Math.random() * (window.innerWidth - 120);
+    const y = Math.random() * (window.innerHeight - 80);
 
-    noBtn.style.left = x + "px";
-    noBtn.style.top = y + "px";
+    noBtn.style.transform = `translate(${x}px, ${y}px)`;
 
-    noBtn.innerText = jokes[Math.floor(Math.random()*jokes.length)];
+    noBtn.innerText = cursedTexts[Math.floor(Math.random()*cursedTexts.length)];
 });
 
+/* YES */
 yesBtn.addEventListener('click', () => {
 
     const date = document.getElementById('date').value;
     const time = document.getElementById('time').value;
 
+    result.style.display = "block";
+
     if(!date || !time){
-        alert("choose date & time 😭");
+        result.innerHTML = "👁 pick date/time first...";
         return;
     }
 
-    result.style.display = "block";
     result.innerHTML = `
-        🖤 confirmed.<br><br>
-        📅 ${date}<br>
-        ⏰ ${time}<br><br>
-        prepare for:<br>
-        awkward silence,<br>
-        memes,<br>
-        overpriced coffee ☕
+        confirmed.<br>
+        prepare for awkward silence + chaos 🖤
     `;
 });
 
-setInterval(() => {
+/* 💀 JUMPSCARE ON NO CLICK */
+noBtn.addEventListener('click', () => {
 
-    const heart = document.createElement("div");
-    heart.classList.add("heart");
+    scare.style.display = "flex";
 
-    heart.innerHTML = ["♥","♡","💗","💕"][Math.floor(Math.random()*4)];
-    heart.style.left = Math.random()*100 + "vw";
-    heart.style.fontSize = (Math.random()*25 + 15) + "px";
+    // scream sound (optional)
+    const audio = new Audio("https://www.myinstants.com/media/sounds/movie_1.mp3");
+    audio.volume = 0.8;
+    audio.play();
 
-    document.body.appendChild(heart);
-
-    setTimeout(() => heart.remove(), 10000);
-
-},700);
+    setTimeout(() => {
+        scare.style.display = "none";
+    }, 1200);
+});
 
 </script>
 
