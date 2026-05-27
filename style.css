@@ -14,28 +14,7 @@ body{
     background:
     radial-gradient(circle at top, rgba(255,0,0,0.08), transparent 40%),
     linear-gradient(135deg,#050005,#000);
-    color:#eaeaea;
-}
-
-/* noise */
-body::before{
-    content:"";
-    position:absolute;
-    width:200%;
-    height:200%;
-    background:repeating-linear-gradient(
-        0deg,
-        rgba(255,255,255,0.03),
-        rgba(255,255,255,0.03) 1px,
-        transparent 4px
-    );
-    opacity:0.15;
-    animation:noise 6s linear infinite;
-}
-
-@keyframes noise{
-    from{transform:translateY(0);}
-    to{transform:translateY(-60px);}
+    color:white;
 }
 
 /* creatures */
@@ -59,19 +38,10 @@ body::before{
     text-align:center;
 }
 
-.badge{
-    color:#ff4d6d;
-    margin-bottom:15px;
-}
+.badge{color:#ff4d6d;margin-bottom:15px;}
+h1{color:#ff2e4d;}
 
-h1{
-    color:#ff2e4d;
-}
-
-.subtitle{
-    margin:15px 0;
-    color:#ccc;
-}
+.subtitle{margin:15px 0;color:#ccc;}
 
 .meme-box{
     margin:20px 0;
@@ -79,39 +49,44 @@ h1{
     color:#bbb;
 }
 
-/* inputs */
+/* input */
 input{
     width:100%;
     padding:12px;
     margin:8px 0;
-    border:none;
     border-radius:10px;
+    border:none;
     background:rgba(255,255,255,0.05);
     color:white;
 }
 
-/* buttons */
+/* buttons area (IMPORTANT) */
 .buttons{
-    display:flex;
-    justify-content:center;
-    gap:20px;
+    position:relative;
+    height:120px;
     margin-top:15px;
 }
 
+/* buttons */
 button{
     padding:12px 24px;
     border:none;
     border-radius:999px;
     font-weight:bold;
     cursor:pointer;
+    position:absolute;
 }
 
 .yes{
+    left:20px;
+    bottom:20px;
     background:#ff0033;
     color:white;
 }
 
 .no{
+    right:20px;
+    bottom:20px;
     background:rgba(255,255,255,0.1);
     color:#ff6b6b;
 }
@@ -119,27 +94,21 @@ button{
 /* result */
 .result{
     margin-top:20px;
-    display:none;
 }
 
-/* GLITCH */
+/* glitch */
 .glitch{
     position:fixed;
     top:0;
     left:0;
     width:100vw;
     height:100vh;
-    background:
-    repeating-linear-gradient(
-        90deg,
-        rgba(255,0,0,0.2),
-        rgba(0,0,0,0.4) 10px
-    );
     display:none;
+    background:repeating-linear-gradient(90deg, rgba(255,0,0,0.2), transparent 10px);
     z-index:999;
 }
 
-/* JUMPSCARE */
+/* jumpscare */
 .jumpscare{
     position:fixed;
     top:0;
