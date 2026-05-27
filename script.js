@@ -1,28 +1,10 @@
 const noBtn = document.getElementById("noBtn");
 const yesBtn = document.getElementById("yesBtn");
+const area = document.getElementById("area");
 const result = document.getElementById("result");
 
 const glitch = document.getElementById("glitch");
 const jumpscare = document.getElementById("jumpscare");
-
-const texts = [
-    "no is not allowed",
-    "error 404 free will missing",
-    "try again (you can't)",
-    "system says YES",
-    "permission denied"
-];
-
-/* runaway NO button */
-noBtn.addEventListener("mouseover", () => {
-
-    const x = Math.random() * 200;
-    const y = Math.random() * 200;
-
-    noBtn.style.transform = `translate(${x}px, ${y}px)`;
-
-    noBtn.innerText = texts[Math.floor(Math.random()*texts.length)];
-});
 
 /* YES */
 yesBtn.addEventListener("click", () => {
@@ -30,27 +12,51 @@ yesBtn.addEventListener("click", () => {
     const date = document.getElementById("date").value;
     const time = document.getElementById("time").value;
 
-    result.style.display = "block";
-
     if(!date || !time){
-        result.innerHTML = "👁 pick date/time first";
+        result.innerHTML = "👁 choose date/time first";
         return;
     }
 
-    result.innerHTML = `
-        confirmed 🖤<br>
-        ${date} ${time}
-    `;
+    result.innerHTML = `confirmed 🖤<br>${date} ${time}`;
 });
 
-/* 💀 NO = glitch + jumpscare */
+
+/* 🤖 AI NO BUTTON */
+noBtn.addEventListener("mouseover", (e) => {
+
+    const areaRect = area.getBoundingClientRect();
+    const btnRect = noBtn.getBoundingClientRect();
+
+    const maxX = areaRect.width - btnRect.width;
+    const maxY = areaRect.height - btnRect.height;
+
+    const mouseX = e.clientX - areaRect.left;
+    const mouseY = e.clientY - areaRect.top;
+
+    // AI logic: if user is close → run away faster
+    const distanceX = Math.abs(mouseX - noBtn.offsetLeft);
+    const distanceY = Math.abs(mouseY - noBtn.offsetTop);
+
+    let moveX = Math.random() * maxX;
+    let moveY = Math.random() * maxY;
+
+    if(distanceX < 80 && distanceY < 80){
+        // panic mode
+        moveX = Math.random() * maxX;
+        moveY = Math.random() * maxY;
+    }
+
+    noBtn.style.left = moveX + "px";
+    noBtn.style.top = moveY + "px";
+});
+
+
+/* 💀 CLICK = glitch + jumpscare */
 noBtn.addEventListener("click", () => {
 
-    // glitch first
     glitch.style.display = "block";
 
     setTimeout(() => {
-
         glitch.style.display = "none";
         jumpscare.style.display = "block";
 
