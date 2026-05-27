@@ -4,29 +4,122 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>☠ invitation</title>
+<title>🍷 покана (не е вирус, обещавам)</title>
+
+<style>
+
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Arial, sans-serif;
+    background: linear-gradient(135deg,#2b0000,#3b0a0a,#1a0000);
+    color:#f2e9e4;
+}
+
+.card{
+    width:90%;
+    max-width:520px;
+    background:rgba(60,10,10,0.6);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 0 40px rgba(0,0,0,0.5);
+}
+
+h1{
+    color:#ffd7c2;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    font-size:0.95rem;
+    margin-bottom:20px;
+    opacity:0.9;
+}
+
+.fun-box{
+    background:rgba(255,255,255,0.06);
+    padding:15px;
+    border-radius:12px;
+    margin-bottom:20px;
+    font-size:0.9rem;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin:8px 0;
+    border:none;
+    border-radius:10px;
+    background:rgba(255,255,255,0.08);
+    color:white;
+}
+
+button{
+    padding:12px 20px;
+    border:none;
+    border-radius:999px;
+    margin:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.yes{
+    background:#7a1f1f;
+    color:white;
+}
+
+.no{
+    background:rgba(255,255,255,0.1);
+    color:#ffe2d6;
+}
+
+.footer{
+    margin-top:15px;
+    font-size:0.8rem;
+    opacity:0.7;
+}
+
+</style>
+
 </head>
 
 <body>
 
-<h1>date request</h1>
+<div class="card">
 
-<p>
-След дълго мислене… те каня на среща.
-</p>
+    <h1>🍷 официална покана</h1>
 
-<label>Дата:</label><br>
-<input type="date"><br><br>
+    <div class="subtitle">
+        Това не е спам… само малко социален риск 😌
+    </div>
 
-<label>Час:</label><br>
-<input type="time"><br><br>
+    <div class="fun-box">
+        📊 awkward level: 42%<br>
+        ☕ coffee dependency: yes<br>
+        🧠 braincells remaining: questionable
+    </div>
 
-<button>yes</button>
-<button>no</button>
+    <label>📅 дата</label>
+    <input type="date">
 
-<p>
-system status: unstable emotions
-</p>
+    <label>⏰ час</label>
+    <input type="time">
+
+    <div>
+        <button class="yes">yes 😌</button>
+        <button class="no">no 🙃</button>
+    </div>
+
+    <div class="footer">
+        ако приемеш: обещавам да не е cringe (maybe)
+    </div>
+
+</div>
 
 </body>
 </html>
