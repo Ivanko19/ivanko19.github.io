@@ -8,12 +8,12 @@ const success = document.getElementById("success");
 
 /* fake no messages */
 const noMessages = [
-    "ERROR: NO unavailable 💀",
+    "ERROR: НЕ не е опция💀",
     "system blocked rejection 😭",
-    "nice try 👁️",
-    "ravens chose YES 🪶",
+    "добър опит 👁️",
+    "бухалчето каза да и ти нямаш избор 🪶",
     "escape failed 😂",
-    "denied by cursed AI"
+    "ограничена сте мадам"
 ];
 
 /* floating ravens + owls */
