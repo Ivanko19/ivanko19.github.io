@@ -86,12 +86,14 @@ input{
     color:white;
 }
 
-/* buttons area */
 .buttons{
     position:relative;
-    height:120px;
-    margin-top:18px;
+    height:140px;
+    width:100%;
+    margin-top:20px;
+    overflow:hidden;
 }
+
 
 /* buttons */
 button{
@@ -113,11 +115,12 @@ button{
 
 /* NO */
 .no{
+    position:absolute;
     right:10px;
     bottom:10px;
     background:rgba(255,255,255,0.1);
     color:#ffe2d6;
-    position:absolute;
+    transition:left 0.15s, top 0.15s;
 }
 }
 
