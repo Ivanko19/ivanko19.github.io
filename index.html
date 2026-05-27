@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Official Date Invitation 💌</title>
+<title>Официална покана 👀 ✨</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -218,15 +218,15 @@ button{
     <h1>date request 💌</h1>
 
     <div class="subtitle">
-        След дълги преговори с моя brain,<br>
-        стигнах до conclusion-а,<br>
-        че трябва да те поканя на среща 😌
+        След дълги преговори с болния ми мозък,<br>
+        мисля, че сега е момента да те поканя
+        да гледаме ,,Време разделно"
     </div>
 
     <div class="meme-box">
-        📊 Probability of awkward silence: 17%<br>
-        ☕ Probability of overpriced coffee: 99%<br>
-        ❤️ Probability I’ll be nervous: scientifically concerning
+        📊 Шансове да ти е криндж: 67%<br>
+        ☕ Шансове да предозираме с кофеин: 99%<br>
+        ❤️ Шанс да съм прекалено смешна и да си забравя името: притеснително високи 
     </div>
 
     <div class="calendar">
@@ -242,11 +242,11 @@ button{
     <div class="buttons">
 
         <button class="yes" id="yesBtn">
-            okay cute 😎
+            хихихихихих 😎
         </button>
 
         <button class="no" id="noBtn">
-            no 😭
+            Не?! 😭
         </button>
 
     </div>
@@ -267,10 +267,10 @@ const result = document.getElementById('result');
 
 const excuses = [
     "не може 😭",
-    "nice try 😂",
-    "button unavailable",
+    "пф, добър опит 😂",
+    "няма такъв бутон",
     "404 no escape",
-    "illegal option 🚨"
+    "незаконно 🚨"
 ];
 
 noBtn.addEventListener('mouseover', () => {
@@ -291,22 +291,22 @@ yesBtn.addEventListener('click', () => {
     const time = document.getElementById('time').value;
 
     if(!date || !time){
-        alert("first choose date & time 😭");
+        alert("ъм, pookie не си избрала дата и час 😭");
         return;
     }
 
     result.style.display = 'block';
 
     result.innerHTML = `
-        🎉 booking confirmed.<br><br>
+        🎉 резервирана си на тази дата в този час, честито.<br><br>
 
         📅 ${date}<br>
         ⏰ ${time}<br><br>
 
-        please prepare for:<br>
-        elite jokes,<br>
-        unnecessary eye contact,<br>
-        and emotionally expensive coffee ☕
+        Моля подготви се предварително за:<br>
+        "смешни" шегички,<br>
+        рандъм въпроси,<br>
+        хубаво кафе и сокче ☕
     `;
 });
 
