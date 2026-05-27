@@ -1,27 +1,65 @@
-const glitch = document.getElementById('glitch');
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
+const result = document.getElementById("result");
 
-/* 💀 JUMPSCARE SEQUENCE */
-noBtn.addEventListener('click', () => {
+const glitch = document.getElementById("glitch");
+const jumpscare = document.getElementById("jumpscare");
 
-    // 1. show glitch first
+const texts = [
+    "no is not allowed",
+    "error 404 free will missing",
+    "try again (you can't)",
+    "system says YES",
+    "permission denied"
+];
+
+/* runaway NO button */
+noBtn.addEventListener("mouseover", () => {
+
+    const x = Math.random() * 200;
+    const y = Math.random() * 200;
+
+    noBtn.style.transform = `translate(${x}px, ${y}px)`;
+
+    noBtn.innerText = texts[Math.floor(Math.random()*texts.length)];
+});
+
+/* YES */
+yesBtn.addEventListener("click", () => {
+
+    const date = document.getElementById("date").value;
+    const time = document.getElementById("time").value;
+
+    result.style.display = "block";
+
+    if(!date || !time){
+        result.innerHTML = "👁 pick date/time first";
+        return;
+    }
+
+    result.innerHTML = `
+        confirmed 🖤<br>
+        ${date} ${time}
+    `;
+});
+
+/* 💀 NO = glitch + jumpscare */
+noBtn.addEventListener("click", () => {
+
+    // glitch first
     glitch.style.display = "block";
 
-    // 2. sound (optional horror hit)
-    const audio = new Audio("https://www.myinstants.com/media/sounds/windows-error-sound-effect.mp3");
-    audio.volume = 0.8;
-    audio.play();
-
-    // 3. after short delay → jumpscare
     setTimeout(() => {
-        glitch.style.display = "none";
-        scare.style.display = "flex";
 
-        const scream = new Audio("https://www.myinstants.com/media/sounds/movie_1.mp3");
-        scream.volume = 0.9;
-        scream.play();
+        glitch.style.display = "none";
+        jumpscare.style.display = "block";
+
+        const audio = new Audio("https://www.myinstants.com/media/sounds/movie_1.mp3");
+        audio.volume = 0.8;
+        audio.play();
 
         setTimeout(() => {
-            scare.style.display = "none";
+            jumpscare.style.display = "none";
         }, 1200);
 
     }, 500);
