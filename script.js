@@ -39,7 +39,7 @@ yesBtn.addEventListener("click", () => {
     const time = document.querySelector("input[type='time']").value;
 
     if (!date || !time) {
-        alert("choose date & time 😭");
+        alert("Pookie избери дата и час 😭");
         return;
     }
 
