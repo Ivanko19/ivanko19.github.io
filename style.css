@@ -132,3 +132,6 @@ button{
     from{transform:scale(0);}
     to{transform:scale(1);}
 }
+body div{
+    filter: drop-shadow(0 0 6px rgba(255,255,255,0.2));
+}
