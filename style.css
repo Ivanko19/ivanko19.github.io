@@ -1,142 +1,143 @@
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Poppins, sans-serif;
+    font-family:Poppins,sans-serif;
 }
 
 body{
-    height:100vh;
+    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    background: linear-gradient(135deg,#1a0000,#2b0a0a,#0a0000);
-    overflow:hidden;
-    color:#f5e9e2;
-}
-
-/* 🌫 floating mist background */
-body::before{
-    content:"";
-    position:fixed;
-    width:200%;
-    height:200%;
     background:
-    radial-gradient(circle, rgba(255,255,255,0.04) 2px, transparent 2px);
-    background-size:50px 50px;
-    animation:mist 20s linear infinite;
-    opacity:0.25;
+    radial-gradient(circle at top, rgba(120,0,0,0.2), transparent 40%),
+    linear-gradient(135deg,#140000,#2b0a0a,#050000);
+    color:#f5e9e2;
+    overflow:hidden;
+    padding:20px;
 }
 
-@keyframes mist{
-    from{transform:translate(0,0);}
-    to{transform:translate(-120px,-80px);}
-}
-
-/* 🪟 GLASS CARD */
+/* CARD */
 .card{
-    width:92%;
+    width:100%;
     max-width:520px;
     padding:30px;
-    border-radius:24px;
 
     background:rgba(255,255,255,0.06);
-    backdrop-filter: blur(18px);
+    backdrop-filter:blur(18px);
 
-    border:1px solid rgba(255,255,255,0.12);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:24px;
 
     box-shadow:
-        0 0 40px rgba(255,0,0,0.15),
-        0 20px 60px rgba(0,0,0,0.6);
+    0 0 40px rgba(255,0,0,0.15),
+    0 20px 60px rgba(0,0,0,0.5);
 
     text-align:center;
+
+    position:relative;
 }
 
-/* TITLE glow */
+/* TITLE */
 h1{
     color:#ffd7c2;
-    text-shadow:0 0 20px rgba(255,120,120,0.2);
+    margin-bottom:10px;
 }
 
 /* subtitle */
 .subtitle{
-    margin:10px 0 20px;
     opacity:0.85;
-}
-
-/* glass info box */
-.glass-box{
-    background:rgba(255,255,255,0.05);
-    border:1px solid rgba(255,255,255,0.08);
-    padding:14px;
-    border-radius:14px;
-    font-size:0.85rem;
     margin-bottom:20px;
 }
 
-/* inputs */
+/* INFO BOX */
+.glass-box{
+    background:rgba(255,255,255,0.05);
+    border-radius:14px;
+    padding:14px;
+    margin-bottom:20px;
+    font-size:0.9rem;
+    line-height:1.6;
+}
+
+/* INPUTS */
 input{
     width:100%;
-    padding:12px;
-    margin-top:10px;
-    border-radius:10px;
+    padding:14px;
+    margin-top:12px;
+
     border:none;
-    background:rgba(255,255,255,0.07);
+    border-radius:12px;
+
+    background:rgba(255,255,255,0.08);
+
     color:white;
+    font-size:1rem;
 }
 
+/* 🔥 FIX CALENDAR/TIME ICONS */
+input::-webkit-calendar-picker-indicator{
+    filter:invert(1);
+    cursor:pointer;
+}
+
+/* BUTTON AREA */
 .buttons{
     position:relative;
-    height:140px;
     width:100%;
+    height:140px;
     margin-top:20px;
-    overflow:hidden;
 }
 
-
-/* buttons */
+/* BUTTONS */
 button{
-    padding:12px 20px;
+    padding:12px 24px;
     border:none;
     border-radius:999px;
-    font-weight:600;
     cursor:pointer;
+    font-weight:600;
     position:absolute;
+    transition:0.15s;
 }
 
 /* YES */
 .yes{
     left:10px;
     bottom:10px;
-    background:#8a1f1f;
+
+    background:linear-gradient(135deg,#7a1f1f,#c0392b);
     color:white;
 }
 
 /* NO */
 .no{
-    position:absolute;
-    right:10px;
-    bottom:10px;
+    top:10px;
+    left:300px;
+
     background:rgba(255,255,255,0.1);
     color:#ffe2d6;
-    transition:left 0.15s, top 0.15s;
-}
 }
 
-/* 🎉 success pop */
+/* SUCCESS */
 .success{
     display:none;
-    margin-top:18px;
-    font-size:1.2rem;
+    margin-top:20px;
+    font-size:1.3rem;
     font-weight:700;
+    color:#ffd7c2;
+
     animation:pop 0.4s ease;
 }
 
 @keyframes pop{
-    from{transform:scale(0);}
-    to{transform:scale(1);}
-}
-body div{
-    filter: drop-shadow(0 0 6px rgba(255,255,255,0.2));
+    from{
+        transform:scale(0);
+        opacity:0;
+    }
+
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
 }
