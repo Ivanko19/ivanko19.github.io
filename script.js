@@ -6,22 +6,15 @@ const area = document.getElementById("area");
 const success = document.getElementById("success");
 
 /* 🤖 NO BUTTON AI */
-let fearLevel = 1;
-
 noBtn.addEventListener("mouseover", () => {
 
     const rect = area.getBoundingClientRect();
 
-    const maxX = rect.width - 90;
-    const maxY = rect.height - 50;
+    const maxX = rect.width - noBtn.offsetWidth;
+    const maxY = rect.height - noBtn.offsetHeight;
 
-    fearLevel += 0.15;
-
-    let x = Math.random() * maxX * fearLevel;
-    let y = Math.random() * maxY * fearLevel;
-
-    x = Math.min(maxX, x);
-    y = Math.min(maxY, y);
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
 
     noBtn.style.left = x + "px";
     noBtn.style.top = y + "px";
