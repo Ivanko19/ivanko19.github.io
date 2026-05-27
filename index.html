@@ -6,206 +6,7 @@
 
 <title>☠ cursed date invitation</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
-
-body{
-    height:100vh;
-    overflow:hidden;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:
-    radial-gradient(circle at top, rgba(255,0,0,0.08), transparent 40%),
-    radial-gradient(circle at bottom, rgba(0,0,0,0.95), transparent 60%),
-    linear-gradient(135deg,#050005,#0a0a10,#000);
-    color:#eaeaea;
-    position:relative;
-}
-
-/* GRUNGY NOISE LAYER */
-body::before{
-    content:"";
-    position:absolute;
-    width:200%;
-    height:200%;
-    background:
-    repeating-linear-gradient(
-        0deg,
-        rgba(255,255,255,0.03),
-        rgba(255,255,255,0.03) 1px,
-        transparent 1px,
-        transparent 4px
-    );
-    animation:noise 6s linear infinite;
-    opacity:0.15;
-}
-
-@keyframes noise{
-    from{ transform:translateY(0); }
-    to{ transform:translateY(-60px); }
-}
-
-/* grime flicker */
-@keyframes flicker {
-    0%,100% { opacity:1; }
-    50% { opacity:0.6; }
-    52% { opacity:0.9; }
-    54% { opacity:0.4; }
-}
-
-/* creatures */
-.creature{
-    position:absolute;
-    font-size:90px;
-    opacity:0.12;
-    animation:float 8s ease-in-out infinite;
-}
-
-.raven{ left:5%; top:15%; }
-.owl{ right:5%; bottom:10%; animation-delay:2s; }
-
-@keyframes float{
-    0%{ transform:translateY(0); }
-    50%{ transform:translateY(-20px); }
-    100%{ transform:translateY(0); }
-}
-
-/* CARD */
-.card{
-    width:90%;
-    max-width:560px;
-    background:rgba(10,0,10,0.78);
-    border:1px solid rgba(255,0,0,0.15);
-    border-radius:24px;
-    padding:40px;
-    text-align:center;
-    box-shadow:0 0 80px rgba(255,0,0,0.08);
-    z-index:10;
-}
-
-.badge{
-    display:inline-block;
-    padding:6px 14px;
-    border-radius:999px;
-    background:rgba(255,0,0,0.08);
-    border:1px solid rgba(255,0,0,0.2);
-    color:#ff4d6d;
-    font-size:0.8rem;
-    margin-bottom:18px;
-}
-
-h1{
-    font-size:2.5rem;
-    color:#ff2e4d;
-    margin-bottom:10px;
-    animation:flicker 3s infinite;
-}
-
-.subtitle{
-    margin-bottom:25px;
-    color:#cfcfcf;
-}
-
-/* grunge box */
-.meme-box{
-    background:rgba(255,255,255,0.03);
-    border:1px dashed rgba(255,0,0,0.25);
-    padding:16px;
-    border-radius:14px;
-    margin-bottom:20px;
-    color:#bdbdbd;
-}
-
-/* inputs */
-input{
-    width:100%;
-    padding:14px;
-    margin-bottom:12px;
-    border:none;
-    border-radius:12px;
-    background:rgba(255,255,255,0.05);
-    color:white;
-}
-
-/* buttons */
-.buttons{
-    position:relative;
-    display:flex;
-    justify-content:center;
-    gap:20px;
-}
-
-button{
-    padding:14px 26px;
-    border:none;
-    border-radius:999px;
-    font-weight:700;
-    cursor:pointer;
-}
-
-.yes{
-    background:linear-gradient(135deg,#ff0033,#6a00ff);
-    color:white;
-}
-
-.no{
-    background:rgba(255,255,255,0.05);
-    color:#ff6b6b;
-    position:absolute;
-    right:0;
-}
-
-/* RESULT */
-.result{
-    margin-top:20px;
-    display:none;
-    background:rgba(0,0,0,0.5);
-    border:1px solid rgba(255,0,0,0.2);
-    padding:18px;
-    border-radius:14px;
-}
-    
- <div class="glitch-flash" id="glitch"></div>
-    
-/* 🔥 JUMPSCARE OVERLAY */
-.jumpscare{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100vw;
-    height:100vh;
-    background:black;
-    display:none;
-    justify-content:center;
-    align-items:center;
-    z-index:999;
-}
-
-.jumpscare img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    animation:shake 0.2s infinite;
-}
-
-@keyframes shake{
-    0%{ transform:translate(0,0); }
-    25%{ transform:translate(8px,-8px); }
-    50%{ transform:translate(-8px,8px); }
-    75%{ transform:translate(8px,8px); }
-    100%{ transform:translate(0,0); }
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -220,7 +21,7 @@ button{
     <h1>date request.exe</h1>
 
     <div class="subtitle">
-        не натискай “no”… сериозно.
+        не натискай “no”…
     </div>
 
     <div class="meme-box">
@@ -241,72 +42,15 @@ button{
 
 </div>
 
-<!-- JUMPSCARE LAYER -->
+<!-- glitch overlay -->
+<div class="glitch" id="glitch"></div>
+
+<!-- jumpscare -->
 <div class="jumpscare" id="jumpscare">
-    <img src="https://i.imgur.com/oCkEbrA.jpg" alt="scare">
+    <img src="https://i.imgur.com/oCkEbrA.jpg">
 </div>
 
-<script>
-
-const noBtn = document.getElementById('noBtn');
-const yesBtn = document.getElementById('yesBtn');
-const result = document.getElementById('result');
-const scare = document.getElementById('jumpscare');
-
-const cursedTexts = [
-    "NO? interesting choice...",
-    "you shouldn't have done that",
-    "system is angry",
-    "why would you do this",
-    "ERROR: bad decision"
-];
-
-/* runaway NO button */
-noBtn.addEventListener('mouseover', () => {
-
-    const x = Math.random() * (window.innerWidth - 120);
-    const y = Math.random() * (window.innerHeight - 80);
-
-    noBtn.style.transform = `translate(${x}px, ${y}px)`;
-
-    noBtn.innerText = cursedTexts[Math.floor(Math.random()*cursedTexts.length)];
-});
-
-/* YES */
-yesBtn.addEventListener('click', () => {
-
-    const date = document.getElementById('date').value;
-    const time = document.getElementById('time').value;
-
-    result.style.display = "block";
-
-    if(!date || !time){
-        result.innerHTML = "👁 pick date/time first...";
-        return;
-    }
-
-    result.innerHTML = `
-        confirmed.<br>
-        prepare for awkward silence + chaos 🖤
-    `;
-});
-
-/* 💀 JUMPSCARE ON NO CLICK */
-noBtn.addEventListener('click', () => {
-
-    scare.style.display = "flex";
-
-    // scream sound (optional)
-    const audio = new Audio("https://www.myinstants.com/media/sounds/movie_1.mp3");
-    audio.volume = 0.8;
-    audio.play();
-
-    setTimeout(() => {
-        scare.style.display = "none";
-    }, 1200);
-});
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
