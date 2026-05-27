@@ -1,0 +1,27 @@
+/* FULLSCREEN GLITCH FLASH */
+.glitch-flash{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    z-index:998;
+    display:none;
+    background:
+        repeating-linear-gradient(
+            90deg,
+            rgba(255,0,0,0.15),
+            rgba(0,0,0,0.3) 10px,
+            rgba(255,255,255,0.05) 20px
+        );
+    mix-blend-mode:screen;
+    animation:glitchFlash 0.4s infinite;
+}
+
+@keyframes glitchFlash{
+    0%{ transform:translate(0,0); filter:contrast(1.2) hue-rotate(0deg); }
+    25%{ transform:translate(-10px,5px); }
+    50%{ transform:translate(10px,-5px); filter:contrast(2); }
+    75%{ transform:translate(-5px,10px); }
+    100%{ transform:translate(0,0); filter:hue-rotate(90deg); }
+}
