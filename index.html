@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>🍷 покана (не е вирус, обещавам)</title>
+<title>🍷 date request</title>
 
 <style>
 
@@ -14,56 +14,66 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    font-family:Arial, sans-serif;
-    background: linear-gradient(135deg,#2b0000,#3b0a0a,#1a0000);
-    color:#f2e9e4;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#2a0000,#3b0a0a,#120000);
+    color:#f5e9e2;
 }
 
 .card{
     width:90%;
     max-width:520px;
-    background:rgba(60,10,10,0.6);
+    background:rgba(70,10,10,0.65);
     border:1px solid rgba(255,255,255,0.08);
     border-radius:20px;
     padding:30px;
     text-align:center;
-    box-shadow:0 0 40px rgba(0,0,0,0.5);
+    box-shadow:0 0 50px rgba(0,0,0,0.6);
 }
 
 h1{
-    color:#ffd7c2;
     margin-bottom:10px;
+    color:#ffd6c2;
 }
 
 .subtitle{
-    font-size:0.95rem;
     margin-bottom:20px;
     opacity:0.9;
 }
 
-.fun-box{
+.fun{
     background:rgba(255,255,255,0.06);
-    padding:15px;
+    padding:12px;
     border-radius:12px;
     margin-bottom:20px;
+    font-size:0.9rem;
+}
+
+label{
+    display:block;
+    margin-top:10px;
+    text-align:left;
     font-size:0.9rem;
 }
 
 input{
     width:100%;
     padding:12px;
-    margin:8px 0;
+    margin-top:5px;
     border:none;
     border-radius:10px;
     background:rgba(255,255,255,0.08);
     color:white;
 }
 
+.buttons{
+    margin-top:20px;
+}
+
 button{
-    padding:12px 20px;
+    padding:12px 22px;
     border:none;
     border-radius:999px;
-    margin:10px;
+    margin:5px;
     cursor:pointer;
     font-weight:bold;
 }
@@ -79,7 +89,7 @@ button{
 }
 
 .footer{
-    margin-top:15px;
+    margin-top:20px;
     font-size:0.8rem;
     opacity:0.7;
 }
@@ -92,16 +102,16 @@ button{
 
 <div class="card">
 
-    <h1>🍷 официална покана</h1>
+    <h1>🍷 date request</h1>
 
     <div class="subtitle">
-        Това не е спам… само малко социален риск 😌
+        След дълго мислене… те каня на среща.
     </div>
 
-    <div class="fun-box">
+    <div class="fun">
         📊 awkward level: 42%<br>
-        ☕ coffee dependency: yes<br>
-        🧠 braincells remaining: questionable
+        🧠 braincells: low battery<br>
+        ☕ caffeine: required
     </div>
 
     <label>📅 дата</label>
@@ -110,13 +120,13 @@ button{
     <label>⏰ час</label>
     <input type="time">
 
-    <div>
+    <div class="buttons">
         <button class="yes">yes 😌</button>
         <button class="no">no 🙃</button>
     </div>
 
     <div class="footer">
-        ако приемеш: обещавам да не е cringe (maybe)
+        обещавам да не е cringe (100% no guarantee)
     </div>
 
 </div>
