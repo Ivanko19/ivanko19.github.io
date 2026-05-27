@@ -1,3 +1,12 @@
+Ето ти **целия готов файл (copy/paste 1:1 в `index.html`)** с:
+
+* запазен твой текст и логика
+* нов **dark emo elegant background**
+* по-сладък + леко тъмен + „mysterious cute“ vibe
+
+---
+
+```html
 <!DOCTYPE html>
 <html lang="bg">
 <head>
@@ -22,99 +31,115 @@ body{
     height:100vh;
     overflow:hidden;
     background:
-    radial-gradient(circle at top left,#ffe4ec 0%,transparent 30%),
-    radial-gradient(circle at bottom right,#ffd6e7 0%,transparent 30%),
-    linear-gradient(135deg,#fff8fb,#fff1f5);
+    radial-gradient(circle at top left, rgba(122,92,255,0.22), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(255,76,145,0.18), transparent 35%),
+    radial-gradient(circle at center, rgba(70,90,255,0.12), transparent 40%),
+    linear-gradient(135deg,#0f0f17,#151521,#1d1b2e);
     display:flex;
     justify-content:center;
     align-items:center;
-    color:#444;
+    color:#e8e8ee;
     position:relative;
 }
 
-/* floating hearts */
+/* subtle animated noise grid */
+body::before{
+    content:"";
+    position:absolute;
+    width:200%;
+    height:200%;
+    background:
+    radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size:40px 40px;
+    animation:moveBg 30s linear infinite;
+    opacity:0.25;
+}
 
+@keyframes moveBg{
+    from{ transform:translate(0,0); }
+    to{ transform:translate(-120px,-80px); }
+}
+
+/* floating hearts */
 .heart{
     position:absolute;
-    color:#ff7aa2;
-    opacity:0.15;
-    animation:float 10s linear infinite;
+    color:#ff7eb6;
+    opacity:0.08;
+    animation:float 12s linear infinite;
     user-select:none;
+    text-shadow:0 0 15px rgba(255,126,182,0.4);
 }
 
 @keyframes float{
-    from{
-        transform:translateY(100vh) rotate(0deg);
-    }
-    to{
-        transform:translateY(-120px) rotate(360deg);
-    }
+    from{ transform:translateY(100vh) rotate(0deg); }
+    to{ transform:translateY(-120px) rotate(360deg); }
 }
 
-/* main card */
-
+/* card */
 .card{
     width:90%;
     max-width:560px;
-    background:rgba(255,255,255,0.75);
-    backdrop-filter:blur(14px);
-    border:1px solid rgba(255,255,255,0.7);
+    background:rgba(20,20,30,0.58);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,0.08);
     border-radius:32px;
     padding:40px;
     text-align:center;
     box-shadow:
-    0 15px 40px rgba(255,120,160,0.15);
+    0 15px 50px rgba(0,0,0,0.45),
+    0 0 40px rgba(140,100,255,0.08);
     position:relative;
     z-index:10;
     animation:fadeIn 1s ease;
 }
 
 @keyframes fadeIn{
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+    from{ opacity:0; transform:translateY(20px); }
+    to{ opacity:1; transform:translateY(0); }
 }
 
+/* badge */
 .badge{
     display:inline-block;
-    background:#ffe3ec;
-    color:#ff4f87;
+    background:rgba(255,255,255,0.08);
+    color:#ff9dc2;
     padding:8px 18px;
     border-radius:999px;
     font-size:0.9rem;
     font-weight:600;
     margin-bottom:20px;
+    border:1px solid rgba(255,255,255,0.06);
 }
 
+/* title */
 h1{
     font-size:2.8rem;
     margin-bottom:15px;
-    color:#ff4f87;
+    color:#ff8fb7;
+    text-shadow:0 0 18px rgba(255,143,183,0.2);
 }
 
+/* subtitle */
 .subtitle{
     font-size:1.08rem;
     line-height:1.8;
-    color:#666;
+    color:#d4d4de;
     margin-bottom:30px;
 }
 
+/* meme box */
 .meme-box{
-    background:#fff3f7;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.05);
     border-radius:20px;
     padding:18px;
     margin-bottom:25px;
     font-size:0.95rem;
     line-height:1.7;
-    color:#666;
+    color:#cfcfe6;
 }
 
+/* calendar */
 .calendar{
     text-align:left;
     margin-bottom:20px;
@@ -124,7 +149,7 @@ label{
     display:block;
     margin-bottom:8px;
     font-weight:600;
-    color:#555;
+    color:#f0f0f5;
 }
 
 input{
@@ -133,11 +158,18 @@ input{
     border:none;
     border-radius:16px;
     margin-bottom:18px;
-    background:white;
-    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+    background:rgba(255,255,255,0.08);
+    color:white;
+    border:1px solid rgba(255,255,255,0.06);
     font-size:1rem;
+    outline:none;
 }
 
+input::-webkit-calendar-picker-indicator{
+    filter:invert(1);
+}
+
+/* buttons */
 .buttons{
     display:flex;
     justify-content:center;
@@ -157,9 +189,9 @@ button{
 }
 
 .yes{
-    background:#ff4f87;
+    background:linear-gradient(135deg,#ff5ca8,#9b6dff);
     color:white;
-    box-shadow:0 10px 20px rgba(255,79,135,0.25);
+    box-shadow:0 10px 25px rgba(155,109,255,0.25);
 }
 
 .yes:hover{
@@ -167,41 +199,36 @@ button{
 }
 
 .no{
-    background:#ffe5ee;
-    color:#ff4f87;
+    background:rgba(255,255,255,0.08);
+    color:#ff9dc2;
     position:absolute;
     right:0;
+    border:1px solid rgba(255,255,255,0.06);
 }
 
+/* result */
 .result{
     margin-top:28px;
     display:none;
-    background:#fff3f7;
+    background:rgba(255,255,255,0.05);
     border-radius:22px;
     padding:20px;
     line-height:1.9;
-    animation:fadeIn 0.6s ease;
+    color:#ececf6;
+    border:1px solid rgba(255,255,255,0.05);
 }
 
+/* small text */
 .small{
     margin-top:25px;
     font-size:0.82rem;
-    color:#999;
+    color:#8f8fa8;
 }
 
+/* mobile */
 @media(max-width:600px){
-
-    .card{
-        padding:28px;
-    }
-
-    h1{
-        font-size:2rem;
-    }
-
-    .subtitle{
-        font-size:0.98rem;
-    }
+    .card{ padding:28px; }
+    h1{ font-size:2rem; }
 }
 
 </style>
@@ -219,14 +246,14 @@ button{
 
     <div class="subtitle">
         След дълги преговори с болния ми мозък,<br>
-        мисля, че сега е момента да те поканя
-        да гледаме ,,Време разделно"
+        мисля, че сега е момента да те поканя<br>
+        да гледаме „Време разделно"
     </div>
 
     <div class="meme-box">
         📊 Шансове да ти е криндж: 67%<br>
         ☕ Шансове да предозираме с кофеин: 99%<br>
-        ❤️ Шанс да съм прекалено смешна и да си забравя името: притеснително високи 
+        ❤️ Шанс да съм прекалено смешна: притеснително висок
     </div>
 
     <div class="calendar">
@@ -267,7 +294,7 @@ const result = document.getElementById('result');
 
 const excuses = [
     "не може 😭",
-    "пф, добър опит 😂",
+    "пф 😂",
     "няма такъв бутон",
     "404 no escape",
     "незаконно 🚨"
@@ -291,45 +318,39 @@ yesBtn.addEventListener('click', () => {
     const time = document.getElementById('time').value;
 
     if(!date || !time){
-        alert("ъм, pookie не си избрала дата и час 😭");
+        alert("ъм, избери дата и час 😭");
         return;
     }
 
     result.style.display = 'block';
 
     result.innerHTML = `
-        🎉 резервирана си на тази дата в този час, честито.<br><br>
+        🎉 резервирано успешно.<br><br>
 
         📅 ${date}<br>
         ⏰ ${time}<br><br>
 
-        Моля подготви се предварително за:<br>
-        "смешни" шегички,<br>
-        рандъм въпроси,<br>
-        хубаво кафе и сокче ☕
+        Подготви се за:<br>
+        awkward silence,<br>
+        смешни шеги,<br>
+        и overpriced кафе ☕
     `;
 });
 
 /* floating hearts */
-
 setInterval(() => {
 
     const heart = document.createElement('div');
-
     heart.classList.add('heart');
 
     heart.innerHTML = ['♥','♡','💕','💗'][Math.floor(Math.random()*4)];
 
     heart.style.left = Math.random()*100 + 'vw';
-
-    heart.style.fontSize =
-    (Math.random()*30 + 15) + 'px';
+    heart.style.fontSize = (Math.random()*30 + 15) + 'px';
 
     document.body.appendChild(heart);
 
-    setTimeout(() => {
-        heart.remove();
-    },10000);
+    setTimeout(() => heart.remove(), 10000);
 
 },700);
 
@@ -337,3 +358,4 @@ setInterval(() => {
 
 </body>
 </html>
+```
