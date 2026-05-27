@@ -1,1 +1,134 @@
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins, sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(135deg,#1a0000,#2b0a0a,#0a0000);
+    overflow:hidden;
+    color:#f5e9e2;
+}
+
+/* 🌫 floating mist background */
+body::before{
+    content:"";
+    position:fixed;
+    width:200%;
+    height:200%;
+    background:
+    radial-gradient(circle, rgba(255,255,255,0.04) 2px, transparent 2px);
+    background-size:50px 50px;
+    animation:mist 20s linear infinite;
+    opacity:0.25;
+}
+
+@keyframes mist{
+    from{transform:translate(0,0);}
+    to{transform:translate(-120px,-80px);}
+}
+
+/* 🪟 GLASS CARD */
+.card{
+    width:92%;
+    max-width:520px;
+    padding:30px;
+    border-radius:24px;
+
+    background:rgba(255,255,255,0.06);
+    backdrop-filter: blur(18px);
+
+    border:1px solid rgba(255,255,255,0.12);
+
+    box-shadow:
+        0 0 40px rgba(255,0,0,0.15),
+        0 20px 60px rgba(0,0,0,0.6);
+
+    text-align:center;
+}
+
+/* TITLE glow */
+h1{
+    color:#ffd7c2;
+    text-shadow:0 0 20px rgba(255,120,120,0.2);
+}
+
+/* subtitle */
+.subtitle{
+    margin:10px 0 20px;
+    opacity:0.85;
+}
+
+/* glass info box */
+.glass-box{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.08);
+    padding:14px;
+    border-radius:14px;
+    font-size:0.85rem;
+    margin-bottom:20px;
+}
+
+/* inputs */
+input{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    border-radius:10px;
+    border:none;
+    background:rgba(255,255,255,0.07);
+    color:white;
+}
+
+/* buttons area */
+.buttons{
+    position:relative;
+    height:80px;
+    margin-top:18px;
+}
+
+/* buttons */
+button{
+    padding:12px 20px;
+    border:none;
+    border-radius:999px;
+    font-weight:600;
+    cursor:pointer;
+    position:absolute;
+}
+
+/* YES */
+.yes{
+    left:10px;
+    bottom:10px;
+    background:#8a1f1f;
+    color:white;
+}
+
+/* NO */
+.no{
+    right:10px;
+    bottom:10px;
+    background:rgba(255,255,255,0.1);
+    color:#ffe2d6;
+}
+
+/* 🎉 success pop */
+.success{
+    display:none;
+    margin-top:18px;
+    font-size:1.2rem;
+    font-weight:700;
+    animation:pop 0.4s ease;
+}
+
+@keyframes pop{
+    from{transform:scale(0);}
+    to{transform:scale(1);}
+}
