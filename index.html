@@ -1,13 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="bg">
-
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Date.exe 😂❤️</title>
+<title>Official Date Invitation 💌</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -20,163 +19,60 @@
 }
 
 body{
-    overflow:hidden;
     height:100vh;
-    background:#0f172a;
-    color:white;
+    overflow:hidden;
+    background:
+    radial-gradient(circle at top left,#ffe4ec 0%,transparent 30%),
+    radial-gradient(circle at bottom right,#ffd6e7 0%,transparent 30%),
+    linear-gradient(135deg,#fff8fb,#fff1f5);
     display:flex;
     justify-content:center;
     align-items:center;
+    color:#444;
     position:relative;
 }
 
-/* animated blobs */
+/* floating hearts */
 
-.blob{
+.heart{
     position:absolute;
-    border-radius:50%;
-    filter:blur(80px);
-    opacity:0.6;
-    animation:move 15s infinite alternate ease-in-out;
+    color:#ff7aa2;
+    opacity:0.15;
+    animation:float 10s linear infinite;
+    user-select:none;
 }
 
-.blob1{
-    width:350px;
-    height:350px;
-    background:#ff0080;
-    top:-100px;
-    left:-100px;
-}
-
-.blob2{
-    width:300px;
-    height:300px;
-    background:#7c3aed;
-    bottom:-100px;
-    right:-100px;
-    animation-delay:3s;
-}
-
-.blob3{
-    width:250px;
-    height:250px;
-    background:#00d4ff;
-    bottom:20%;
-    left:20%;
-    animation-delay:6s;
-}
-
-@keyframes move{
+@keyframes float{
     from{
-        transform:translate(0,0) scale(1);
+        transform:translateY(100vh) rotate(0deg);
     }
-
     to{
-        transform:translate(100px,-50px) scale(1.2);
+        transform:translateY(-120px) rotate(360deg);
     }
 }
 
-/* card */
+/* main card */
 
 .card{
     width:90%;
-    max-width:600px;
+    max-width:560px;
+    background:rgba(255,255,255,0.75);
+    backdrop-filter:blur(14px);
+    border:1px solid rgba(255,255,255,0.7);
+    border-radius:32px;
     padding:40px;
-    border-radius:30px;
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(18px);
-    border:1px solid rgba(255,255,255,0.15);
     text-align:center;
-    z-index:10;
-    box-shadow:0 10px 40px rgba(0,0,0,0.4);
-    animation:fadeIn 1s ease;
-}
-
-h1{
-    font-size:3rem;
-    margin-bottom:10px;
-}
-
-.meme{
-    font-size:1.1rem;
-    opacity:0.9;
-    margin-bottom:25px;
-    line-height:1.7;
-}
-
-img{
-    width:180px;
-    border-radius:20px;
-    margin-bottom:20px;
-    box-shadow:0 8px 25px rgba(0,0,0,0.3);
-}
-
-.calendar{
-    margin-top:20px;
-    text-align:left;
-}
-
-label{
-    display:block;
-    margin-bottom:8px;
-    font-weight:600;
-}
-
-input{
-    width:100%;
-    padding:14px;
-    border:none;
-    border-radius:14px;
-    margin-bottom:18px;
-    font-size:1rem;
-}
-
-.buttons{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    margin-top:10px;
+    box-shadow:
+    0 15px 40px rgba(255,120,160,0.15);
     position:relative;
-}
-
-button{
-    border:none;
-    padding:15px 30px;
-    border-radius:999px;
-    font-size:1rem;
-    cursor:pointer;
-    transition:0.3s;
-    font-weight:700;
-}
-
-.yes{
-    background:#22c55e;
-    color:white;
-}
-
-.yes:hover{
-    transform:scale(1.08);
-}
-
-.no{
-    background:#ef4444;
-    color:white;
-    position:absolute;
-    right:0;
-}
-
-.result{
-    margin-top:25px;
-    font-size:1.3rem;
-    display:none;
-    line-height:1.8;
-    animation:fadeIn 0.8s ease;
+    z-index:10;
+    animation:fadeIn 1s ease;
 }
 
 @keyframes fadeIn{
     from{
         opacity:0;
-        transform:translateY(15px);
+        transform:translateY(20px);
     }
 
     to{
@@ -185,41 +81,126 @@ button{
     }
 }
 
-.floating{
+.badge{
+    display:inline-block;
+    background:#ffe3ec;
+    color:#ff4f87;
+    padding:8px 18px;
+    border-radius:999px;
+    font-size:0.9rem;
+    font-weight:600;
+    margin-bottom:20px;
+}
+
+h1{
+    font-size:2.8rem;
+    margin-bottom:15px;
+    color:#ff4f87;
+}
+
+.subtitle{
+    font-size:1.08rem;
+    line-height:1.8;
+    color:#666;
+    margin-bottom:30px;
+}
+
+.meme-box{
+    background:#fff3f7;
+    border-radius:20px;
+    padding:18px;
+    margin-bottom:25px;
+    font-size:0.95rem;
+    line-height:1.7;
+    color:#666;
+}
+
+.calendar{
+    text-align:left;
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+    color:#555;
+}
+
+input{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:16px;
+    margin-bottom:18px;
+    background:white;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+    font-size:1rem;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    position:relative;
+    margin-top:10px;
+}
+
+button{
+    border:none;
+    border-radius:999px;
+    padding:14px 28px;
+    font-size:1rem;
+    font-weight:700;
+    cursor:pointer;
+    transition:0.25s;
+}
+
+.yes{
+    background:#ff4f87;
+    color:white;
+    box-shadow:0 10px 20px rgba(255,79,135,0.25);
+}
+
+.yes:hover{
+    transform:translateY(-3px) scale(1.04);
+}
+
+.no{
+    background:#ffe5ee;
+    color:#ff4f87;
     position:absolute;
-    font-size:24px;
-    animation:float 8s linear infinite;
-    opacity:0.7;
+    right:0;
 }
 
-@keyframes float{
-    from{
-        transform:translateY(100vh) rotate(0deg);
-    }
-
-    to{
-        transform:translateY(-120px) rotate(360deg);
-    }
+.result{
+    margin-top:28px;
+    display:none;
+    background:#fff3f7;
+    border-radius:22px;
+    padding:20px;
+    line-height:1.9;
+    animation:fadeIn 0.6s ease;
 }
 
-/* mobile */
+.small{
+    margin-top:25px;
+    font-size:0.82rem;
+    color:#999;
+}
 
 @media(max-width:600px){
 
-    h1{
-        font-size:2.1rem;
-    }
-
     .card{
-        padding:25px;
+        padding:28px;
     }
 
-    .meme{
-        font-size:1rem;
+    h1{
+        font-size:2rem;
     }
 
-    img{
-        width:140px;
+    .subtitle{
+        font-size:0.98rem;
     }
 }
 
@@ -228,21 +209,24 @@ button{
 
 <body>
 
-<div class="blob blob1"></div>
-<div class="blob blob2"></div>
-<div class="blob blob3"></div>
-
 <div class="card">
 
-    <h1>Date.exe ❤️😂</h1>
+    <div class="badge">
+        verified cute invitation ✔
+    </div>
 
-    <img src="https://i.imgur.com/6VBx3io.jpeg" alt="meme">
+    <h1>date request 💌</h1>
 
-    <div class="meme">
-        След внимателен scientific analysis,<br>
-        ChatGPT заключи че трябва да излезем 🤝<br><br>
+    <div class="subtitle">
+        След дълги преговори с моя brain,<br>
+        стигнах до conclusion-а,<br>
+        че трябва да те поканя на среща 😌
+    </div>
 
-        Моля избери дата и час за нашата legendary среща.
+    <div class="meme-box">
+        📊 Probability of awkward silence: 17%<br>
+        ☕ Probability of overpriced coffee: 99%<br>
+        ❤️ Probability I’ll be nervous: scientifically concerning
     </div>
 
     <div class="calendar">
@@ -258,16 +242,20 @@ button{
     <div class="buttons">
 
         <button class="yes" id="yesBtn">
-            Потвърди 😎
+            okay cute 😎
         </button>
 
         <button class="no" id="noBtn">
-            Не 😭
+            no 😭
         </button>
 
     </div>
 
     <div class="result" id="result"></div>
+
+    <div class="small">
+        powered by anxiety & good intentions™
+    </div>
 
 </div>
 
@@ -277,24 +265,24 @@ const noBtn = document.getElementById('noBtn');
 const yesBtn = document.getElementById('yesBtn');
 const result = document.getElementById('result');
 
-const funnyMessages = [
-    "Сигурна ли си? 😭",
-    "Аз вече казах на майка ми 😂",
-    "Nice try 😎",
-    "Error 404: rejection not found",
-    "AI predicts YES 🤖"
+const excuses = [
+    "не може 😭",
+    "nice try 😂",
+    "button unavailable",
+    "404 no escape",
+    "illegal option 🚨"
 ];
 
 noBtn.addEventListener('mouseover', () => {
 
-    const x = Math.random() * (window.innerWidth - 150);
-    const y = Math.random() * (window.innerHeight - 100);
+    const x = Math.random() * (window.innerWidth - 180);
+    const y = Math.random() * (window.innerHeight - 120);
 
     noBtn.style.left = `${x}px`;
     noBtn.style.top = `${y}px`;
 
     noBtn.innerText =
-        funnyMessages[Math.floor(Math.random() * funnyMessages.length)];
+    excuses[Math.floor(Math.random()*excuses.length)];
 });
 
 yesBtn.addEventListener('click', () => {
@@ -303,50 +291,47 @@ yesBtn.addEventListener('click', () => {
     const time = document.getElementById('time').value;
 
     if(!date || !time){
-        alert("Избери дата и час first 😭");
+        alert("first choose date & time 😭");
         return;
     }
 
     result.style.display = 'block';
 
     result.innerHTML = `
-        🚀 Срещата е confirmed.<br><br>
+        🎉 booking confirmed.<br><br>
 
         📅 ${date}<br>
         ⏰ ${time}<br><br>
 
-        Prepare yourself for:<br>
-        awkward eye contact,<br>
-        elite memes<br>
-        и overpriced кафе ☕😂
+        please prepare for:<br>
+        elite jokes,<br>
+        unnecessary eye contact,<br>
+        and emotionally expensive coffee ☕
     `;
 });
 
-/* floating emojis */
-
-const emojis = ["❤️","😂","☕","✨","😎","💀"];
+/* floating hearts */
 
 setInterval(() => {
 
-    const el = document.createElement('div');
+    const heart = document.createElement('div');
 
-    el.classList.add('floating');
+    heart.classList.add('heart');
 
-    el.innerHTML =
-        emojis[Math.floor(Math.random()*emojis.length)];
+    heart.innerHTML = ['♥','♡','💕','💗'][Math.floor(Math.random()*4)];
 
-    el.style.left = Math.random() * 100 + 'vw';
+    heart.style.left = Math.random()*100 + 'vw';
 
-    el.style.fontSize =
-        (Math.random()*20 + 20) + 'px';
+    heart.style.fontSize =
+    (Math.random()*30 + 15) + 'px';
 
-    document.body.appendChild(el);
+    document.body.appendChild(heart);
 
     setTimeout(() => {
-        el.remove();
-    }, 8000);
+        heart.remove();
+    },10000);
 
-}, 500);
+},700);
 
 </script>
 
